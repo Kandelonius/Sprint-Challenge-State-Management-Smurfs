@@ -2,10 +2,11 @@ import { FETCH_SMURF, FETCH_SMURF_SUCCESS, FETCH_SMURF_FAILURE } from "../action
 
 const initialState = {
     isFetching: false,
-    name: "Brainey",
-    age: 200,
-    height: "5cm",
-    id: 0,
+    smurf: null,
+    // name: null,
+    // age: null,
+    // height: null,
+    // id: null,
     error: ""
   };
 
@@ -20,7 +21,7 @@ const initialState = {
           return {
             ...state,
             isFetching: false,
-            SMURF: action.payload,
+            smurf: action.payload,
           };
           case FETCH_SMURF_FAILURE:
             return {

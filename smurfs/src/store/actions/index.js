@@ -11,8 +11,8 @@ export const fetchSMURF = () => {
         dispatch({ type: FETCH_SMURF });
         axios.get(url)
         .then(res => {
-            console.log(res);
-            dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data[16] });
+            console.log('res ', res);
+            dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data });
         })
         .catch(err => {
             console.log(err);
