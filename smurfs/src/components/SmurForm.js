@@ -21,12 +21,13 @@ class SmurForm extends Component {
     }
 
     onSubmit(e) {
-        e.preventDefault();
+        console.log('submit ',e);
+        // e.preventDefault();
         const post = {
-            name: "",
-            age: "",
-            height: "",
-            id: ""
+            name: this.state.name,
+            id: this.state.id,
+            height: this.state.height,
+            age: this.state.age,
         };
         this.props.addSmurf(post);
     }
