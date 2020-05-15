@@ -19,11 +19,11 @@ const Smurf = props => {
                     <h4 key={smurf.id}>name: {smurf.name} age: {smurf.age}</h4>
                 ))}
             </div>}
-            {/* {props.add && <div className='success'>
+            {props.add && <div className='success'>
       {props.smurf.map(smurf => (
           <h4 key={smurf.id}>name: {smurf.name} age: {smurf.age}</h4>
         ))}
-      </div>} */}
+      </div>}
             {props.error && <div className='failure'>
                 <h1>{props.error}</h1>
             </div>}
@@ -36,7 +36,7 @@ const mapStateToProps = state => {
     return {
         isFetching: state.smurf.isFetching,
         smurf: state.smurf.smurf,
-        add: state.smurf.smurf,
+        add: state.smurf.add,
         error: state.smurf.error
     };
 };
