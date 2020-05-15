@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchSMURF } from "../store/actions";
+import { fetchSmurf, addSmurf } from "../store/actions";
 
 const Smurf = props => {
   useEffect(() => {
-    props.fetchSMURF();
+    props.fetchSmurf();
+  }, []);
+  useEffect(() => {
+    props.addSmurf();
   }, []);
   console.log('AE', props);
   return (
@@ -15,7 +18,11 @@ const Smurf = props => {
       {props.smurf.map(smurf => (
           <h4 key={smurf.id}>name: {smurf.name} age: {smurf.age}</h4>
         ))}
-       
+      </div>}
+      {props.add && <div className='success'>
+      {props.smurf.map(smurf => (
+          <h4 key={smurf.id}>name: {smurf.name} age: {smurf.age}</h4>
+        ))}
       </div>}
       {props.error && <div className='failure'>
         <h1>{props.error}</h1>
@@ -35,5 +42,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchSMURF }
+  { fetchSmurf, addSmurf }
 )(Smurf);
