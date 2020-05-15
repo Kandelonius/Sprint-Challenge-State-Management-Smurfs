@@ -4,10 +4,6 @@ const initialState = {
     isFetching: false,
     smurf: null,
     add: null,
-    // name: null,
-    // age: null,
-    // height: null,
-    // id: null,
     error: ""
 };
 

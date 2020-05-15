@@ -19,15 +19,11 @@ export const fetchSmurf = () => dispatch => {
             dispatch({ type: FETCH_SMURF_FAILURE, payload: "oops, that's not good..." });
         });
 };
-export const addSmurf = () => dispatch => {
-    return axios.post(url, {
-        name: "Sleepy",
-        age: 200,
-        height: "5cm",
-        id: 1
-    })
+export const addSmurf = post => dispatch => {
+    return axios.post(url, post)
         .then(res => {
             console.log('pos', res);
-            dispatch({ type: ADD_SMURF, payload: res.data });
+            const newSmurf = { type: ADD_SMURF, payload: res.data };
+            dispatch(newSmurf);
         });
 }
